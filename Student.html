@@ -1,0 +1,403 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="keywords" content="Site keywords here">
+		<meta name="description" content="">
+		<meta name='copyright' content=''>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Title -->
+        <title>SkrMed-Free Disease Checker</title>
+		
+		<!-- Favicon -->
+        <link rel="icon" href="img/favicon.jpg">
+		
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- Nice Select CSS -->
+		<link rel="stylesheet" href="css/nice-select.css">
+		<!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- icofont CSS -->
+        <link rel="stylesheet" href="css/icofont.css">
+		<!-- Slicknav -->
+		<link rel="stylesheet" href="css/slicknav.min.css">
+		<!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="css/owl-carousel.css">
+		<!-- Datepicker CSS -->
+		<link rel="stylesheet" href="css/datepicker.css">
+		<!-- Animate CSS -->
+        <link rel="stylesheet" href="css/animate.min.css">
+		<!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="css/magnific-popup.css">
+		
+		<!-- Medipro CSS -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+		
+    </head>
+    <body>
+	
+		<!-- Preloader -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+
+                <div class="indicator"> 
+                    <svg width="16px" height="12px">
+                        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <!-- End Preloader -->
+		
+		<!-- Header Area -->
+		<header class="header" >
+			<!-- Topbar -->
+			<div class="topbar">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-md-5 col-12">
+							<!-- Contact -->							
+								<li><a href="#">SKR Med</a></li>
+							</ul>
+							<!-- End Contact -->
+						</div>
+						<div class="col-lg-6 col-md-7 col-12">
+							<!-- Top Contact -->
+							<ul class="top-contact">
+								<li><i class="fa fa-phone"></i>080 567 xxxx</li>
+								<li><i class="fa fa-envelope"></i><a href="mailto:support@yourmail.com">17741@skr.ac.th</a></li>
+							</ul>
+							<!-- End Top Contact -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Topbar -->
+			<!-- Header Inner -->
+			<div class="header-inner">
+				<div class="container">
+					<div class="inner">
+						<div class="row">
+							<div class="col-lg-3 col-md-3 col-12">
+								<!-- Start Logo -->
+								<div class="logo">
+									<a href="index.html"><img src="img/logo.png" alt="#"></a>
+								</div>
+								<!-- End Logo -->
+								<!-- Mobile Nav -->
+								<div class="mobile-nav"></div>
+								<!-- End Mobile Nav -->
+							</div>
+							<div class="col-lg-7 col-md-9 col-12">
+								<!-- Main Menu -->
+                                <div class="main-menu">
+                                    <nav class="navigation">
+                                        <ul class="nav menu">
+                                            <li class="active"><a href="#">Home <i class="icofont-rounded-down"></i></a>
+                                                <ul class="dropdown">
+                                                    <li><a href="index.html">Home Page</a></li>
+                                                </ul>
+											</li>
+												<ul class="dropdown">
+                                                    <li><a href="contact.html">Student</a></li>
+                                                </ul>
+                                            </li>
+											<ul class="dropdown">
+                                            <li><a href="#">Services <i class="icofont-rounded-down"></i></a>
+                                                <ul class="dropdown">
+                                                    <li><a href="Student.html">Disease Checker</a></li>
+                                                </ul>
+                                            </li>
+                                    </nav>
+                                </div>
+                                <!--/ End Main Menu -->
+                                </div>
+                                <div class="col-lg-2 col-12">
+                                <div class="get-quote">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Suankularb+Wittayalai+Rangsit" target="_blank" class="btn">Suankularb Wittayalai Rangsit</a>
+                                </div>
+                        </div>
+                    
+						<main>
+							<section id="check-symptom">
+								<div class="symptom-inner">
+									<h2>Disease Checker</h2>
+									<form id="symptomForm" class="symptom-form">
+										<label for="symptom">Symptoms:</label>
+										<input type="text" id="symptom" name="symptom" required>
+										<br><br>
+										<label for="symptom">(Use commas , if more than 1 symptom):</label>
+										<br><br>
+										<input type="submit" value="Submit">
+									</form>
+								</div>
+								<div class="result-box" id="result"></div> <!-- Result box on the right -->
+							</section>
+						</main>
+						
+						
+						
+						
+						
+					<script>
+						// ข้อมูลโรคและอาการ
+						const diseases = [
+					{
+						name: 'ไข้หวัดใหญ่',
+						symptoms: ['ไข้', 'หนาวสั่น', 'ไอ', 'เจ็บคอ', 'น้ำมูกไหล', 'ปวดกล้ามเนื้อ', 'เหนื่อยล้า'],
+						prevention: ['การฉีดวัคซีนประจำปี', 'การล้างมืออย่างถูกต้อง', 'หลีกเลี่ยงการใกล้ชิดกับบุคคลที่ป่วย'],
+						treatment: ['การพักผ่อน', 'การดื่มน้ำ', 'ยาต้านไวรัส']
+					},
+					{
+						name: 'ความดันโลหิตสูง',
+						symptoms: ['ปวดหัว', 'เวียนหัว', 'เลือดกำเดาไหล'],
+						prevention: ['การรับประทานอาหารที่ดีต่อสุขภาพ', 'การออกกำลังกายสม่ำเสมอ', 'การควบคุมน้ำหนัก', 'การลดการบริโภคเกลือ'],
+						treatment: ['การปรับเปลี่ยนวิถีชีวิต', 'การใช้ยาลดความดันโลหิต']
+					},
+					{
+						name: 'โควิด-19',
+						symptoms: ['ไข้', 'ไอ', 'หายใจลำบาก', 'สูญเสียรสชาติ/กลิ่น', 'เหนื่อยล้า'],
+						prevention: ['การฉีดวัคซีน', 'การสวมหน้ากาก', 'การเว้นระยะห่างทางสังคม'],
+						treatment: ['การดูแลตามอาการ', 'ยาต้านไวรัส', 'การรักษาในโรงพยาบาลในกรณีรุนแรง']
+					},
+					{
+						name: 'เบาหวาน',
+						symptoms: ['กระหายน้ำ', 'ปัสสาวะบ่อย', 'เหนื่อยล้า', 'มองเห็นไม่ชัด'],
+						prevention: ['การรับประทานอาหารที่ดีต่อสุขภาพ', 'การออกกำลังกายเป็นประจำ', 'การรักษาน้ำหนักให้เหมาะสม'],
+						treatment: ['การรักษาด้วยอินซูลิน', 'ยารับประทาน', 'การเปลี่ยนแปลงวิถีชีวิต']
+					},
+					{
+						name: 'โรคหอบหืด',
+						symptoms: ['หายใจลำบาก', 'เสียงวี๊ด', 'อึดอัดที่หน้าอก', 'ไอ'],
+						prevention: ['การหลีกเลี่ยงปัจจัยกระตุ้น', 'การใช้ยาพ่น', 'การรักษาร่างกายให้แข็งแรง'],
+						treatment: ['ยาพ่นสเตียรอยด์', 'ยาขยายหลอดลม', 'การจัดการปัจจัยกระตุ้น']
+					},
+					{
+						name: 'ปอดบวม',
+						symptoms: ['ไอมีเสมหะ', 'ไข้', 'หนาวสั่น', 'หายใจลำบาก'],
+						prevention: ['การฉีดวัคซีน', 'การรักษาสุขอนามัย', 'การหลีกเลี่ยงการสูบบุหรี่'],
+						treatment: ['ยาปฏิชีวนะ', 'การพักผ่อน', 'การดื่มน้ำ', 'การบำบัดด้วยออกซิเจนในกรณีรุนแรง']
+					},
+					{
+						name: 'วัณโรค',
+						symptoms: ['ไอเรื้อรัง', 'น้ำหนักลด', 'เหงื่อออกตอนกลางคืน', 'ไข้'],
+						prevention: ['การฉีดวัคซีน BCG', 'การหลีกเลี่ยงการสัมผัสกับบุคคลที่ติดเชื้อวัณโรค'],
+						treatment: ['การรักษาด้วยยาต้านวัณโรคเป็นระยะยาว']
+					},
+					{
+						name: 'ไวรัสตับอักเสบบี',
+						symptoms: ['ดีซ่าน', 'เหนื่อยล้า', 'ปวดท้อง', 'ปัสสาวะมีสีเข้ม'],
+						prevention: ['การฉีดวัคซีน', 'การมีเพศสัมพันธ์อย่างปลอดภัย', 'การหลีกเลี่ยงการใช้เข็มร่วมกัน'],
+						treatment: ['ยาต้านไวรัส', 'การตรวจติดตามเป็นระยะ', 'การปลูกถ่ายตับในกรณีรุนแรง']
+					},
+					{
+						name: 'โรคปอดอุดกั้นเรื้อรัง',
+						symptoms: ['หายใจลำบาก', 'ไอเรื้อรัง', 'การติดเชื้อทางเดินหายใจบ่อย'],
+						prevention: ['การหลีกเลี่ยงการสูบบุหรี่', 'ลดการสัมผัสกับมลพิษ', 'การฉีดวัคซีน'],
+						treatment: ['ยาขยายหลอดลม', 'สเตียรอยด์', 'การบำบัดด้วยออกซิเจน']
+					},
+					{
+						name: 'โรคหลอดเลือดสมอง',
+						symptoms: ['อาการชาของร่างกาย', 'ความสับสน', 'พูดลำบาก', 'ปัญหาการมองเห็น', 'การเสียการทรงตัว'],
+						prevention: ['การควบคุมความดันโลหิต', 'การรับประทานอาหารที่ดีต่อสุขภาพ', 'การออกกำลังกายเป็นประจำ'],
+						treatment: ['ยาละลายลิ่มเลือด', 'การผ่าตัด', 'การฟื้นฟูสมรรถภาพ']
+					},
+					{
+						name: 'ข้อเข่าเสื่อม',
+						symptoms: ['ปวดข้อ', 'ข้อแข็ง', 'บวม', 'การเคลื่อนไหวลดลง'],
+						prevention: ['การรักษาน้ำหนักให้เหมาะสม', 'การออกกำลังกาย', 'การป้องกันการบาดเจ็บ'],
+						treatment: ['ยาแก้ปวด', 'กายภาพบำบัด', 'การผ่าตัดเปลี่ยนข้อในกรณีรุนแรง']
+					},
+					{
+						name: 'โรคอัลไซเมอร์',
+						symptoms: ['การสูญเสียความจำ', 'ความสับสน', 'ความยากลำบากในการทำกิจกรรมที่คุ้นเคย', 'การเปลี่ยนแปลงอารมณ์'],
+						prevention: ['การทำกิจกรรมทางกายและจิตใจเป็นประจำ', 'การรับประทานอาหารที่ดีต่อสุขภาพ', 'การจัดการสุขภาพหัวใจ'],
+						treatment: ['การใช้ยาเพื่อจัดการกับอาการ', 'การบำบัดทางสติปัญญา', 'การดูแลสนับสนุน']
+					},
+					{
+						name: 'ไข้เลือดออก',
+						symptoms: ['ไข้สูง', 'ปวดหัว', 'ปวดหลังตา', 'ปวดข้อ/กล้ามเนื้อ', 'ผื่น'],
+						prevention: ['การควบคุมยุง', 'การใช้สารกันยุง', 'การสวมเสื้อผ้าที่ปกปิด'],
+						treatment: ['การดูแลตามอาการ', 'ยาบรรเทาอาการปวด', 'การทดแทนของเหลว']
+					},
+					{
+						name: 'ชิคุนกุนยา',
+						symptoms: ['ไข้', 'ปวดข้อ', 'ปวดหัว', 'ผื่น', 'ปวดกล้ามเนื้อ'],
+						prevention: ['การควบคุมยุง', 'การสวมเสื้อผ้าป้องกัน', 'การใช้สารกันยุง'],
+						treatment: ['การพักผ่อน', 'การดื่มน้ำ', 'ยาแก้ปวด']
+					},
+					{
+						name: 'มาลาเรีย',
+						symptoms: ['ไข้', 'หนาวสั่น', 'ปวดหัว', 'คลื่นไส้', 'ปวดกล้ามเนื้อ'],
+						prevention: ['การใช้ยาต้านมาลาเรีย', 'การควบคุมยุง', 'การนอนใต้มุ้งที่เคลือบสารกำจัดแมลง'],
+						treatment: ['ยาต้านมาลาเรีย', 'การดูแลตามอาการ']
+					},
+					{
+						name: 'เอชไอวี/เอดส์',
+						symptoms: ['น้ำหนักลด', 'ไข้', 'เหนื่อยล้า', 'การติดเชื้อซ้ำ'],
+						prevention: ['การมีเพศสัมพันธ์อย่างปลอดภัย', 'โปรแกรมแลกเปลี่ยนเข็ม', 'การบำบัดด้วยยาต้านไวรัส'],
+						treatment: ['การบำบัดด้วยยาต้านไวรัส', 'การจัดการกับการติดเชื้อที่เกิดขึ้นซ้ำ']
+					},
+					{
+						name: 'อีสุกอีใส',
+						symptoms: ['ผื่นคัน', 'ไข้', 'อ่อนเพลีย', 'เบื่ออาหาร'],
+						prevention: ['วัคซีนป้องกันโรคอีสุกอีใส', 'การหลีกเลี่ยงการสัมผัสกับบุคคลที่ติดเชื้อ'],
+						treatment: ['ยาต้านไวรัส', 'การบรรเทาอาการคัน', 'การพักผ่อน']
+					},
+					{
+						name: 'โรคไวรัสอีโบลา',
+						symptoms: ['ไข้', 'ปวดหัวรุนแรง', 'ปวดกล้ามเนื้อ', 'ท้องเสีย', 'เลือดออกที่ไม่สามารถอธิบายได้'],
+						prevention: ['การหลีกเลี่ยงการสัมผัสกับบุคคลที่ติดเชื้อ', 'การรักษาสุขอนามัยที่ดี', 'การฉีดวัคซีนในพื้นที่เสี่ยงสูง'],
+						treatment: ['การดูแลตามอาการ', 'การรักษาทดลอง']
+					},
+					{
+						name: 'ไวรัสซิกา',
+						symptoms: ['ไข้', 'ผื่น', 'ปวดข้อ', 'ตาแดง (เยื่อบุตาอักเสบ)'],
+						prevention: ['การควบคุมยุง', 'การใช้สารกันยุง', 'การสวมเสื้อผ้าป้องกัน'],
+						treatment: ['การพักผ่อน', 'การดื่มน้ำ', 'ยาแก้ปวด']
+					},
+					{
+						name: 'โรคหัด',
+						symptoms: ['ไข้สูง', 'ไอ', 'น้ำมูกไหล', 'ตาแดง', 'ผื่น'],
+						prevention: ['วัคซีนป้องกันโรคหัด', 'การหลีกเลี่ยงการสัมผัสกับบุคคลที่ติดเชื้อ'],
+						treatment: ['การดูแลตามอาการ', 'วิตามินเอเสริม']
+					},
+					{
+						name: 'ไอกรน',
+						symptoms: ['การไอรุนแรง', 'เสียงวี๊ดเมื่อหายใจเข้า', 'อาเจียนหลังจากการไอ'],
+						prevention: ['วัคซีน DTaP', 'การหลีกเลี่ยงการสัมผัสกับบุคคลที่ติดเชื้อ'],
+						treatment: ['ยาปฏิชีวนะ', 'การดูแลตามอาการ']
+					},
+					{
+						name: 'ไทฟอยด์',
+						symptoms: ['ไข้สูง', 'ปวดหัว', 'ปวดท้อง', 'อ่อนเพลีย', 'ผื่น'],
+						prevention: ['วัคซีนไทฟอยด์', 'การดื่มน้ำที่ปลอดภัย', 'สุขอนามัยที่ดี'],
+						treatment: ['ยาปฏิชีวนะ', 'การทดแทนของเหลว', 'การดูแลตามอาการ']
+					},
+					{
+						name: 'อหิวาตกโรค',
+						symptoms: ['ท้องเสียรุนแรง', 'อาเจียน', 'ภาวะขาดน้ำ'],
+						prevention: ['การดื่มน้ำที่ปลอดภัย', 'สุขอนามัยที่ดี', 'วัคซีนป้องกันอหิวาตกโรค'],
+						treatment: ['เกลือแร่ผงละลายน้ำ', 'ยาปฏิชีวนะในกรณีรุนแรง']
+					},
+					{
+						name: 'เยื่อหุ้มสมองอักเสบ',
+						symptoms: ['ปวดหัวรุนแรง', 'คอแข็ง', 'ไวต่อแสง', 'ไข้'],
+						prevention: ['การฉีดวัคซีน', 'การหลีกเลี่ยงการใกล้ชิดกับบุคคลที่ติดเชื้อ'],
+						treatment: ['ยาปฏิชีวนะ', 'สเตียรอยด์', 'การดูแลตามอาการ']
+					},
+					{
+						name: 'โรคข้ออักเสบรูมาตอยด์',
+						symptoms: ['ปวดข้อ', 'บวม', 'ข้อแข็ง', 'เหนื่อยล้า'],
+						prevention: ['การรับประทานอาหารที่ดีต่อสุขภาพ', 'การออกกำลังกายเป็นประจำ', 'การหลีกเลี่ยงการสูบบุหรี่'],
+						treatment: ['ยาแก้อักเสบที่ปรับเปลี่ยนโรค (DMARDs)', 'กายภาพบำบัด', 'การผ่าตัดในกรณีรุนแรง']
+					}
+				];
+				
+				
+						// ฟังก์ชันวินิจฉัยโรค
+						function diagnose(symptoms) {
+							let likelyDiseases = [];
+				
+							diseases.forEach(disease => {
+								let matchingSymptoms = disease.symptoms.filter(symptom => symptoms.includes(symptom));
+								if (matchingSymptoms.length > 0) {
+									likelyDiseases.push({
+										name: disease.name,
+										matchingSymptoms: matchingSymptoms,
+										prevention: disease.prevention,
+										treatment: disease.treatment
+									});
+								}
+							});
+				
+							return likelyDiseases;
+						}
+				
+						// ฟังก์ชันแสดงผลการวินิจฉัย
+						function displayDiagnosis(diagnosis) {
+							const resultDiv = document.getElementById('result');
+							resultDiv.innerHTML = ''; // ล้างผลลัพธ์เก่า
+				
+							if (diagnosis.length > 0) {
+								diagnosis.forEach(disease => {
+									const diseaseInfo = document.createElement('div');
+									diseaseInfo.innerHTML = `
+										<h3>${disease.name}</h3>
+										<p><strong>Matching Symptoms:</strong> ${disease.matchingSymptoms.join(', ')}</p>
+										<p><strong>Prevention:</strong> ${disease.prevention.join(', ')}</p>
+										<p><strong>Treatment:</strong> ${disease.treatment.join(', ')}</p>
+									`;
+									resultDiv.appendChild(diseaseInfo);
+								});
+							} else {
+								resultDiv.innerHTML = '<p>ไม่พบโรคที่ตรงกับอาการที่ระบุ</p>';
+							}
+						}
+				
+						// ฟังก์ชันจัดการการส่งแบบฟอร์ม
+						document.getElementById('symptomForm').addEventListener('submit', function(event) {
+							event.preventDefault();
+				
+							const symptomsInput = document.getElementById('symptom').value;
+							const symptoms = symptomsInput.split(',').map(symptom => symptom.trim());
+				
+							const diagnosis = diagnose(symptoms);
+				
+							displayDiagnosis(diagnosis);
+						});
+					</script>
+		<!-- jquery Min JS -->
+        <script src="js/jquery.min.js"></script>
+		<!-- jquery Migrate JS -->
+		<script src="js/jquery-migrate-3.0.0.js"></script>
+		<!-- jquery Ui JS -->
+		<script src="js/jquery-ui.min.js"></script>
+		<!-- Easing JS -->
+        <script src="js/easing.js"></script>
+		<!-- Color JS -->
+		<script src="js/colors.js"></script>
+		<!-- Popper JS -->
+		<script src="js/popper.min.js"></script>
+		<!-- Bootstrap Datepicker JS -->
+		<script src="js/bootstrap-datepicker.js"></script>
+		<!-- Jquery Nav JS -->
+        <script src="js/jquery.nav.js"></script>
+		<!-- Slicknav JS -->
+		<script src="js/slicknav.min.js"></script>
+		<!-- ScrollUp JS -->
+        <script src="js/jquery.scrollUp.min.js"></script>
+		<!-- Niceselect JS -->
+		<script src="js/niceselect.js"></script>
+		<!-- Tilt Jquery JS -->
+		<script src="js/tilt.jquery.min.js"></script>
+		<!-- Owl Carousel JS -->
+        <script src="js/owl-carousel.js"></script>
+		<!-- counterup JS -->
+		<script src="js/jquery.counterup.min.js"></script>
+		<!-- Steller JS -->
+		<script src="js/steller.js"></script>
+		<!-- Wow JS -->
+		<script src="js/wow.min.js"></script>
+		<!-- Magnific Popup JS -->
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<!-- Counter Up CDN JS -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Main JS -->
+		<script src="js/main.js"></script>
+    </body>
+</html>
